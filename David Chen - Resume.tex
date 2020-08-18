@@ -1,4 +1,4 @@
-%! TEX program = xelatex
+%! TEX program = lualatex
 \documentclass[10pt]{article}
 
 \usepackage{geometry}
@@ -30,9 +30,9 @@
     \begin{flushright}
       \setlength{\tabcolsep}{0pt}
       \begin{tabular}{r}
-        \fontsize{36pt}{0pt}\selectfont
+        \fontsize{30pt}{0pt}\selectfont
         \MakeUppercase{#1 \textbf{#2}} \\
-        \normalsize \, \textit{Software Engineer}\hfill \url{https://dav.sh/} \,
+        \normalsize \, \textit{Software Engineer}\hfill % \url{https://dav.sh/} \,
       \end{tabular}
     \end{flushright}
   \end{minipage}
@@ -42,7 +42,7 @@
 \newcommand{\textlight}[1]{{\robotothin #1}}
 \renewcommand{\date}[2]{#1 #2}
 \newcommand{\daterange}[2]{#1 -- \ifthenelse{\equal{#2}{}}{\textit{Present}}{#2}}
-\newcommand{\resumesection}[1]{\vspace{-0.2cm}\section*{#1}\vspace{-0.2cm}\vspace{0.1cm}}
+\newcommand{\resumesection}[1]{\vspace{-0.3cm}\section*{#1}\vspace{-0.3cm}\vspace{0.1cm}}
 \newcommand{\heading}[2]{\textbf{#1} \\ \textit{#2}}
 
 \begin{document}
@@ -54,8 +54,9 @@
 % \name is self-explanatory. \topinfo is for things like social media, email, phone number, address, etc.
   \name{David}{Chen} & \begin{minipage}{0.4\textwidth}
     \vspace{6pt}
-    \href{mailto:chendavid2012@gmail.com}{davi@d-shen.xyz} \\
-    \url{https://github.com/nehc9050} \\
+    \href{mailto:chendavid2012@gmail.com}{chendavid2012@gmail.com}  \\
+    \faGithub \, \href{https://github.com/nehc9050}{/nehc9050} \\
+    \faLinkedin \, \href{https://www.linkedin.com/in/dcychen/}{/in/dcychen} \\
     (781) 367-3554
     \vspace{6pt}
   \end{minipage}
@@ -70,16 +71,20 @@
     \resumesection{Education}
     \textbf{Harvard College} \newline
     \textit{B.A. in Computer Science} \newline
+    \textit{Secondary in Music} \newline
     \textlbf{GPA:} 3.83 \newline
     \daterange{\date{Sept}{2018}}{\date{May}{2022}} \textit{\color{gray}{(exp.)}}
 
+    \vspace{0.25cm}
+    
     \resumesection{Skills}
     \textbf{Languages} \newline
-    C and C++ \newline
-    JavaScript \newline
     Python \newline
+    JavaScript \newline
+    C and C++ \newline
     Java \newline
-    HTML + CSS
+    HTML + CSS \newline
+    OCaml
 
     \vspace{0.25cm}
 
@@ -90,6 +95,9 @@
     Deck.gl \newline
     D3 \newline
     Docker \newline
+    Django
+    
+    \vspace{0.25cm}
 
     \resumesection{Awards}
     \textbf{Codestellation} \newline
@@ -100,24 +108,20 @@
 
     Best Web/Mobile Hack \newline
     \date{Nov 4}{2018}
-
+    
     \vspace{0.25cm}
+    
+    \resumesection{Coursework}
+    Intro to CS \newline
+    Abstraction and Design in \\ \hspace{7} Computation \newline
+    Multivariable Calculus \newline
+    Statistics and Probability \newline
+    Linear Algebra \newline
+    Linear Algebra and Big Data \newline
+    Discrete math \newline
+    Computational Theory \newline
+    Algorithms \& Data Structures \newline
 
-    \textbf{Hack the Heights} \newline
-    First Place \newline
-    \date{Apr 14}{2019}
-
-    \vspace{0.25cm}
-
-    \textbf{Hack Haverhill} \newline
-    First Place \newline
-    \date{Nov 17}{2018}
-
-    \vspace{0.25cm}
-
-    \textbf{BC Hacks} \newline
-    Grand Prize; Hacker's Choice \newline
-    \date{Nov 11}{2018}
   \end{flushleft}
 \end{minipage}
 \hfill
@@ -125,11 +129,11 @@
   \begin{flushleft}
 
   \resumesection{Experience}
-  \textbf{Microsoft} \, Base OS Kernel \hfill Redmond, WA \, \textbf{Remote} \newline
-  \textit{Software Engineering Intern} \hfill \daterange{\date{Jun}{2020}}{}
+  \textbf{Grove Collaborative} \, DXM \hfill San Francisco, CA \, \textbf{Remote} \newline
+  \textit{Systems Engineering Intern} \hfill \daterange{\date{Jun}{2020}}{\date{Aug}{2020}}
   \begin{itemize}
-    \item Took ownership of a project bringing a feature highly desired by both internal Windows teams and external clients to Windows Containers, decreasing certain loading and setup scenarios from tens of minutes to seconds.
-    \item Wrote a specification detailing the motivations behind and customer impact of the project.
+    \item Improved internal Docker-based web development platform (DXM) by integrating multiple services, including ElasticSearch and Memcached, automating multiple setup processes, adding debugging support, and revamping old code
+    \item Created a local developer monitoring service using Prometheus from the ground up for company’s main website
   \end{itemize}
 
   \vspace{0.25cm}
@@ -137,55 +141,52 @@
   \textbf{Rocket Software} \, Zowe App Platform \hfill \textbf{Waltham, MA} \newline
   \textit{Software Engineering Intern} \hfill \daterange{\date{Jun}{2019}}{\date{Dec}{2019}}
   \begin{itemize}
-    \item Built a new web interface for mainframes to filter and search for objects in a Db2 database, visualize and explore their hierarchical relationships, and define “Collections” of many objects.
-    \item Designed and implemented a modular plugin system to add Microsoft Language Servers to a browser-based code editor for the mainframe.
+    \item Worked with React.js GraphQL, and i18N to enable various functionalities and improve application extensibility for a commercial web application for mainframe modernization and db2 querying
+    \item Built a new web interface for mainframe visualization with filter, search, and manual collection creation capabilities for db2 database objects.
   \end{itemize}
 
   \vspace{0.25cm}
 
-  \textbf{Fellowship of Christian Clubs} \hfill \textbf{Remote} \newline
-  \textit{Software Engineer} \hfill \daterange{\date{Jun}{2019}}{}
+  \textbf{Federal Reserve Bank of Boston} \hfill \textbf{Boston, MA} \newline
+  \textit{Software Engineering Intern} \hfill \daterange{\date{Jul}{2018}}{\date{Aug}{2018}}
   \begin{itemize}
-    \item Developed, maintained, and hosted the backend and database.
-    \item Designed and helped develop the web interface.
+    \item Utilized Python + Tensorflow in a team of two to develop a facial recognition app
+    \item Created algorithm to collect data (pictures) for training input and enabled real-time facial detection capabilities using OpenCV; end product deployed for use with bank security
   \end{itemize}
 
   \vspace{0.25cm}
 
-  \textbf{rSpace} \, \textit{\color{gray}{Student Run Startup}} \hfill \textit{Atlanta, GA} \textbf{Remote} \newline
-  \textit{Co-Founder and CTO} \hfill \daterange{\date{Oct}{2018}}{}
+  \textbf{Federal Reserve Bank of Boston} \hfill \textbf{Boston, MA} \newline
+  \textit{Software Engineering Intern} \hfill \daterange{\date{Jul}{2017}}{\date{Aug}{2017}}
   \begin{itemize}
-    \item Planned, designed, and developed the entire backend and web frontend.
-    \item Wrote up a comprehensive blueprint documenting the workings of the app, streamlining the development process.
+    \item Used Amazon Web Services to develop an Alexa app to display public bank data and provide analytics by parsing interal JSON inputs based off of custom queries created from user input; end product presented to bank executives
   \end{itemize}
 
+  \resumesection{Extracurriculars}
+  \textbf{CS50} \, Introduction to Computer Science Course \hfill \textbf{Cambridge, MA} \newline
+  \textit{Course Assistant} \hfill \daterange{\date{Sept}{2019}}{\date{Dec}{2019}}
+  \begin{itemize}
+    \item Hold weekly sessions teaching students programming (including C, Python, HTML/CSS, Javascript, SQL) and core computer science concepts
+  \end{itemize}
+  
   \vspace{0.25cm}
-
-  \textbf{Boston College} \hfill \textbf{Chestnut Hill, MA} \newline
-  \textit{Teaching Assistant for Computer Science II} \hfill \daterange{\date{Jan}{2019}}{\date{May}{2019}}
+  \textbf{Harvard Crimson} \, School Newspaper \hfill \textbf{Cambridge, MA} \newline
+  \textit{Tech Associate} \hfill \daterange{\date{May}{2019}}{}
   \begin{itemize}
-    \item Wrote a script to automatically download students’ problem sets, suggest grades, and upload grades and comments to the Canvas Learning Management System, saving the professor hours of time.
-    \item Assisted students with problem sets and answered student questions.
+    \item Aided in porting old codebase to new React.js framework by implementing shortcodes and creating custom article and page templates
+    \item Manage django backend and GraphQL to work with new React.js framework
   \end{itemize}
-
-  \vspace{0.25cm}
-
-  \textbf{BC GET Delivery} \, \textit{\color{gray}{Student Run Startup}} \hfill \textbf{Chestnut Hill, MA} \newline
-  \textit{Full Stack Developer} \hfill \daterange{\date{Oct}{2018}}{\date{Feb}{2019}}
-  \begin{itemize}
-    \item Developed an automated app-to-SMS messaging platform, to ease communication between deliverer and customer and improve customer privacy.
-    \item Discovered and fixed critical security flaws.
-  \end{itemize}
-
+  
+  
   \resumesection{Projects}
 
   \textbf{WikiWhere} \hfill \href{https://wikiwhere.org/}{\faLink \, \textit{https://wikiwhere.org/}} \quad \href{https://github.com/wikiwhere/wikiwhere}{\faGithub \, \textit{wikiwhere/wikiwhere}} \newline
-  WikiWhere is a visualization of Wikipedia articles, and can be used to either traverse through linked articles or find the shortest path between two articles. The frontend uses d3 to visualize the graph, using data returned by the JavaScript and C++ backend. The backend queries Wikipedia data dumps and uses a bi-directional breadth first search to find the shortest path. I worked primarily on the backend and search algorithm.
+  A graph-based visualization for Wikipedia articles (edges represent links). Features include finding shortest paths between two articles using bi-directional BFS that queries Wikipedia data dumps and traversing through linked articles. Technologies used include d3 for graph visualization, and JavaScript and C++ for the backend. Primarily worked with d3, getting everything to show up in the frontend.
 
   \vspace{0.25cm}
 
   \textbf{hackm.app} \hfill \href{https://hackm.app/}{\faLink \, \textit{https://hackm.app/}} \quad \href{https://github.com/hackmapp/hackmapp}{\faGithub \, \textit{hackmapp/hackmapp}} \newline
-  hackm.app is an interactive map of the previous, current, and upcoming MLH hackathons. It scrapes the MLH website every hour using Python and BeautifulSoup, which is processed and served with an Express backend to be displayed in the website frontend using d3. I worked on the backend and helped with polishing the frontend.
+  An interactive map of the previous, current, and upcoming MLH hackathons. Technologies include Python and BeautifulSoup for web scraping, Express for the backend, and d3 for visualization. Worked with d3 in the frontend.
 
   \end{flushleft}
 \end{minipage}
